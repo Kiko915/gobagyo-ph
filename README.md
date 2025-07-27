@@ -1,29 +1,55 @@
-# ./
+<img src="https://ik.imagekit.io/ud6lsb6pl/gobagyo_icon.png" alt="GoBagyo PH Logo" width="120"/>
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+# GoBagyo PH
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+**GoBagyo PH** is a free and open-source disaster preparedness and typhoon tracking app designed especially for Filipinos. It empowers communities with real-time storm information, emergency resources, and offline-access features, perfectly suited for low-connectivity or emergency situations.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 📱 Features
 
-## Project Setup
+- 📡 **Real-Time Weather and Typhoon Updates**
+  - Powered by OpenWeather or PAGASA data (when available)
+  - Map-based visualization with color-coded severity
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
+- 📚 **Downloadable Emergency Guides**
+  - Offline-ready resources (PDFs, checklists, how-tos)
 
-```sh
-npm run dev
-```
+- 🔔 **Alert Notifications**
+  - Custom alert levels, low-battery warning, or high-risk conditions
 
-### Compile and Minify for Production
+- 📶 **Offline Mode**
+  - Saved weather data, guides, and maps are accessible offline
 
-```sh
-npm run build
-```
+- 🌤 **Localized Forecasting**
+  - Weather reports tailored by region
+
+
+---
+
+## 🧩 Technologies Used
+
+- **Frontend**: Vue.js / TailwindCSS
+- **APIs**: OpenWeather, PAGASA (manual feed or scraping)
+- **Storage**: IndexedDB / Service Workers (for offline use)
+- **Deployment**: Vercel
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/gobagyo.git
+   
+   cd gobagyo
+
+2. Install dependencies:
+   ```bash
+   npm install
+
+3. Run development server:
+   ```bash
+   npm run dev
