@@ -43,8 +43,6 @@
 1. Clone the repo:
    ```bash
    git clone https://github.com/yourusername/gobagyo.git
-   
-   cd gobagyo
 
 2. Install dependencies:
    ```bash
