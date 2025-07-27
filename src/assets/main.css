@@ -1,0 +1,423 @@
+@import "tailwindcss";
+
+/* Root and body dark mode backgrounds */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  transition: background 0.3s ease;
+}
+
+.dark body {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+}
+
+.dark html {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+}
+
+#app {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.dark #app {
+  background: transparent !important;
+}
+
+/* Ensure viewport background is always dark */
+.dark * {
+  box-sizing: border-box;
+}
+
+/* Removed overly broad dark background rule that was interfering with component backgrounds */
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+/* Global dark mode background overrides */
+.dark .bg-gradient-to-br.from-slate-50.to-slate-200 {
+  background: linear-gradient(to bottom right, rgb(15 23 42), rgb(30 41 59)) !important;
+}
+
+.dark .bg-gradient-to-r.from-orange-600.to-orange-500 {
+  @apply bg-gradient-to-r from-orange-500 to-orange-400;
+}
+
+/* Card and component backgrounds */
+
+.dark .bg-slate-50 {
+  @apply bg-slate-700;
+}
+
+.dark .bg-slate-200 {
+  @apply bg-slate-600;
+}
+
+/* Comprehensive white background overrides */
+.dark .bg-white {
+  background-color: rgb(30 41 59) !important;
+}
+
+/* Preserve glassmorphism for navigation and header */
+.dark .bg-white\/8:not(nav):not(nav *):not(header):not(header *):not(.header-component):not(.header-component *):not(.bottom-nav-component):not(.bottom-nav-component *) {
+  background-color: rgb(30 41 59 / 0.15) !important;
+}
+
+.dark .bg-white\/10:not(nav):not(nav *):not(header):not(header *):not(.header-component):not(.header-component *):not(.bottom-nav-component):not(.bottom-nav-component *) {
+  background-color: rgb(30 41 59 / 0.2) !important;
+}
+
+/* Ensure header component background works properly */
+.header-component.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dark .header-component.bg-white\/80 {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+/* Ensure bottom navigation component works properly */
+.bottom-nav-component .text-slate-700 {
+  color: rgb(51 65 85) !important;
+}
+
+.dark .bottom-nav-component .text-slate-700 {
+  color: rgb(203 213 225) !important;
+}
+
+.bottom-nav-component.bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .bottom-nav-component.bg-white\/10 {
+  background-color: rgba(30, 41, 59, 0.2) !important;
+}
+
+.bottom-nav-component.bg-white\/8 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .bottom-nav-component.bg-white\/8 {
+  background-color: rgba(30, 41, 59, 0.15) !important;
+}
+
+.dark .bg-white\/20 {
+  background-color: rgb(30 41 59 / 0.3) !important;
+}
+
+.dark .bg-white\/30 {
+  background-color: rgb(30 41 59 / 0.4) !important;
+}
+
+.dark .bg-white\/40 {
+  background-color: rgb(30 41 59 / 0.5) !important;
+}
+
+.dark .bg-white\/50 {
+  background-color: rgb(30 41 59 / 0.6) !important;
+}
+
+.dark .bg-white\/60 {
+  background-color: rgb(30 41 59 / 0.7) !important;
+}
+
+.dark .bg-white\/70 {
+  background-color: rgb(30 41 59 / 0.8) !important;
+}
+
+.dark .bg-white\/80 {
+  @apply bg-slate-800/80;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgb(30 41 59 / 0.9) !important;
+}
+
+/* Ensure all possible slate backgrounds are covered */
+.dark .bg-slate-100 {
+  background-color: rgb(51 65 85) !important;
+}
+
+.dark .bg-slate-300 {
+  background-color: rgb(71 85 105) !important;
+}
+
+.dark .bg-slate-400 {
+  background-color: rgb(100 116 139) !important;
+}
+
+/* Force dark backgrounds on any remaining light elements, but exclude navigation and header */
+.dark [class*="bg-white"]:not(nav):not(nav *):not(header):not(header *) {
+  background-color: rgb(30 41 59 / 0.8) !important;
+}
+
+.dark [class*="bg-slate-50"] {
+  background-color: rgb(51 65 85) !important;
+}
+
+.dark [class*="bg-slate-100"] {
+  background-color: rgb(51 65 85) !important;
+}
+
+.dark [class*="bg-slate-200"] {
+  background-color: rgb(71 85 105) !important;
+}
+
+/* Override any remaining light gradients */
+.dark [class*="from-white"] {
+  --tw-gradient-from: rgb(30 41 59) !important;
+}
+
+.dark [class*="to-white"] {
+  --tw-gradient-to: rgb(30 41 59) !important;
+}
+
+/* Additional viewport coverage */
+.dark .min-h-screen {
+  background: transparent !important;
+}
+
+/* Force all containers to have dark backgrounds */
+
+.dark .hover\:bg-slate-300:hover {
+  @apply bg-slate-500;
+}
+
+/* Text colors */
+.dark .text-slate-800 {
+  @apply text-slate-100;
+}
+
+.dark .text-slate-600 {
+  @apply text-slate-300;
+}
+
+.dark .text-slate-700:not(nav *):not(nav):not(.bottom-nav-component):not(.bottom-nav-component *) {
+  @apply text-slate-200;
+}
+
+.dark .text-slate-500 {
+  @apply text-slate-400;
+}
+
+/* Border colors */
+.dark .border-white\/30 {
+  @apply border-slate-600/30;
+}
+
+/* Quick Actions card gradients for dark mode */
+.dark .from-sky-50.to-blue-100 {
+  @apply from-slate-800 to-slate-700 border border-blue-500/20;
+}
+
+.dark .from-amber-50.to-yellow-100 {
+  @apply from-slate-800 to-slate-700 border border-amber-500/20;
+}
+
+.dark .from-purple-50.to-indigo-100 {
+  @apply from-slate-800 to-slate-700 border border-purple-500/20;
+}
+
+.dark .from-emerald-50.to-green-100 {
+  @apply from-slate-800 to-slate-700 border border-emerald-500/20;
+}
+
+/* White backgrounds in dark mode */
+.dark .bg-white\/50 {
+  @apply bg-slate-700/50;
+}
+
+/* Footer text color */
+.dark .text-slate-500 {
+  @apply text-slate-400;
+}
+
+/* Orange accent colors remain the same for consistency */
+.dark .text-orange-600 {
+  @apply text-orange-400;
+}
+
+/* Border colors for cards and components */
+.dark .border-slate-200 {
+  @apply border-slate-600;
+}
+
+.dark .border-white\/30 {
+  @apply border-slate-600/30;
+}
+
+/* Additional background overrides */
+.dark .bg-slate-50 {
+  @apply bg-slate-700;
+}
+
+/* Ensure all gradient backgrounds work in dark mode */
+.dark [class*="from-slate-50"] {
+  @apply from-slate-900;
+}
+
+.dark [class*="to-slate-200"] {
+  @apply to-slate-800;
+}
+
+/* Header and navigation dark mode support */
+.dark .bg-white {
+  @apply bg-slate-800;
+}
+
+/* Backdrop blur components */
+.dark .backdrop-blur-sm {
+  @apply bg-slate-800/80;
+}
+
+/* Colored accent cards for dark mode */
+.dark .bg-red-50 {
+  @apply bg-red-900/20;
+}
+
+.dark .bg-yellow-50 {
+  @apply bg-yellow-900/20;
+}
+
+.dark .bg-blue-50 {
+  @apply bg-blue-900/20;
+}
+
+.dark .bg-green-50 {
+  @apply bg-green-900/20;
+}
+
+.dark .bg-orange-50 {
+  @apply bg-orange-900/20;
+}
+
+.dark .bg-purple-50 {
+  @apply bg-purple-900/20;
+}
+
+/* Colored borders for dark mode */
+.dark .border-red-200 {
+  @apply border-red-700/50;
+}
+
+.dark .border-yellow-200 {
+  @apply border-yellow-700/50;
+}
+
+.dark .border-blue-200 {
+  @apply border-blue-700/50;
+}
+
+.dark .border-green-200 {
+  @apply border-green-700/50;
+}
+
+.dark .border-orange-200 {
+  @apply border-orange-700/50;
+}
+
+.dark .border-purple-200 {
+  @apply border-purple-700/50;
+}
+
+/* Colored text for dark mode */
+.dark .text-red-800 {
+  @apply text-red-300;
+}
+
+.dark .text-red-600 {
+  @apply text-red-400;
+}
+
+.dark .text-yellow-800 {
+  @apply text-yellow-300;
+}
+
+.dark .text-yellow-600 {
+  @apply text-yellow-400;
+}
+
+.dark .text-blue-800 {
+  @apply text-blue-300;
+}
+
+.dark .text-blue-600 {
+  @apply text-blue-400;
+}
+
+.dark .text-blue-700 {
+  @apply text-blue-400;
+}
+
+.dark .text-green-800 {
+  @apply text-green-300;
+}
+
+.dark .text-green-600 {
+  @apply text-green-400;
+}
+
+.dark .text-green-700 {
+  @apply text-green-400;
+}
+
+.dark .text-orange-800 {
+  @apply text-orange-300;
+}
+
+.dark .text-orange-600 {
+  @apply text-orange-400;
+}
+
+.dark .text-purple-800 {
+  @apply text-purple-300;
+}
+
+.dark .text-purple-600 {
+  @apply text-purple-400;
+}
+
+/* Gradient backgrounds for colored cards */
+.dark .bg-gradient-to-br.from-red-50.to-red-100 {
+  @apply from-red-900/30 to-red-800/20;
+}
+
+.dark .bg-gradient-to-br.from-yellow-50.to-yellow-100 {
+  @apply from-yellow-900/30 to-yellow-800/20;
+}
+
+.dark .bg-gradient-to-br.from-blue-50.to-blue-100 {
+  @apply from-blue-900/30 to-blue-800/20;
+}
+
+.dark .bg-gradient-to-br.from-green-50.to-green-100 {
+  @apply from-green-900/30 to-green-800/20;
+}
+
+.dark .bg-gradient-to-br.from-orange-50.to-orange-100 {
+  @apply from-orange-900/30 to-orange-800/20;
+}
+
+/* Colored background circles */
+.dark .bg-blue-100 {
+  @apply bg-blue-800/30;
+}
+
+.dark .bg-green-100 {
+  @apply bg-green-800/30;
+}
+
+.dark .bg-yellow-100 {
+  @apply bg-yellow-800/30;
+}
+
+.dark .bg-red-100 {
+  @apply bg-red-800/30;
+}
