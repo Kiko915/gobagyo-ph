@@ -42,7 +42,7 @@
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/Kiko915/gobagyo.git
+   git clone https://github.com/Kiko915/gobagyo-ph.git
 
 2. Install dependencies:
    ```bash
