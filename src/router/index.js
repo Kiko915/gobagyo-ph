@@ -7,6 +7,8 @@ import EducationView from '../views/EducationView.vue'
 import DownloadsView from '../views/DownloadsView.vue'
 import SettingsView from '../views/SettingsView.vue'
 import HelpView from '../views/HelpView.vue'
+import PrivacyPolicyView from '../views/PrivacyPolicyView.vue'
+import TermsOfServiceView from '../views/TermsOfServiceView.vue'
 
 const routes = [
   {
@@ -48,6 +50,16 @@ const routes = [
     path: '/help',
     name: 'help',
     component: HelpView,
+  },
+  {
+    path: '/privacy-policy',
+    name: 'privacy-policy',
+    component: PrivacyPolicyView,
+  },
+  {
+    path: '/terms-of-service',
+    name: 'terms-of-service',
+    component: TermsOfServiceView,
   },
 ]
 

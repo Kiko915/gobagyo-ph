@@ -1,11 +1,37 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useLocation } from '../composables/useLocation.js'
+import AlertModal from '../components/AlertModal.vue'
 
 const router = useRouter()
+const { currentLocation, initLocation } = useLocation()
+const showLocationAlert = ref(false)
 
 function navigateTo(path) {
+  // Check if location is set before navigating to location-dependent pages
+  const locationDependentPages = ['/weather', '/typhoon']
+  
+  if (locationDependentPages.includes(path) && !currentLocation.value) {
+    showLocationAlert.value = true
+    return
+  }
+  
   router.push(path)
 }
+
+function handleGoToSettings() {
+  showLocationAlert.value = false
+  router.push('/settings')
+}
+
+function handleCloseAlert() {
+  showLocationAlert.value = false
+}
+
+onMounted(() => {
+  initLocation()
+})
 </script>
 
 <template>
@@ -100,4 +126,15 @@ function navigateTo(path) {
       </div>
     </div>
   </div>
+
+  <!-- Location Alert Modal -->
+  <AlertModal
+    :isVisible="showLocationAlert"
+    title="Location Required"
+    message="To use weather and typhoon features, please set your location in the settings page."
+    type="info"
+    @close="handleCloseAlert"
+    @retry="handleGoToSettings"
+    retryText="Go to Settings"
+  />
 </template>

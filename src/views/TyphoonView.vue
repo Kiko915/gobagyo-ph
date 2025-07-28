@@ -142,4 +142,44 @@
       </div>
     </div>
   </div>
-</template> 
+
+  <!-- Location Alert Modal -->
+  <AlertModal
+    :isVisible="showLocationAlert"
+    title="Location Required"
+    message="To view typhoon information for your area, please set your location in the settings page."
+    type="info"
+    @close="handleCloseAlert"
+    @retry="handleGoToSettings"
+    retryText="Go to Settings"
+  />
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useLocation } from '../composables/useLocation.js'
+import AlertModal from '../components/AlertModal.vue'
+
+const router = useRouter()
+const { currentLocation, initLocation } = useLocation()
+const showLocationAlert = ref(false)
+
+function handleGoToSettings() {
+  showLocationAlert.value = false
+  router.push('/settings')
+}
+
+function handleCloseAlert() {
+  showLocationAlert.value = false
+}
+
+onMounted(() => {
+  initLocation()
+  
+  // Check if location is set, if not show alert
+  if (!currentLocation.value) {
+    showLocationAlert.value = true
+  }
+})
+</script>
